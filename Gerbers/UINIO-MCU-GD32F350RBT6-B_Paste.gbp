@@ -1,12 +1,12 @@
-%TF.GenerationSoftware,KiCad,Pcbnew,(6.0.9)*%
-%TF.CreationDate,2022-12-13T04:15:36+08:00*%
-%TF.ProjectId,UINIO-MCU-GD32F350RBT6,55494e49-4f2d-44d4-9355-2d4744333246,Version 1.0.0*%
+%TF.GenerationSoftware,KiCad,Pcbnew,7.0.5*%
+%TF.CreationDate,2023-06-29T01:29:54+08:00*%
+%TF.ProjectId,UINIO-MCU-GD32F350RBT6,55494e49-4f2d-44d4-9355-2d4744333246,Version 2.0.0*%
 %TF.SameCoordinates,PX6a581f0PY5923d30*%
 %TF.FileFunction,Paste,Bot*%
 %TF.FilePolarity,Positive*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW (6.0.9)) date 2022-12-13 04:15:36*
+G04 Created by KiCad (PCBNEW 7.0.5) date 2023-06-29 01:29:54*
 %MOMM*%
 %LPD*%
 G01*
