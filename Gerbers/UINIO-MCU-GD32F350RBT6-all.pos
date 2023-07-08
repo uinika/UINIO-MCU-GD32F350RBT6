@@ -1,41 +1,41 @@
-### Footprint positions - created on Thu Jun 29 01:51:20 2023 ###
-### Printed by KiCad version 7.0.5
+### Footprint positions - created on Sat Jul  8 13:48:03 2023 ###
+### Printed by KiCad version 7.0.6
 ## Unit = mm, Angle = deg.
 ## Side : All
 # Ref     Val               Package                                   PosX       PosY       Rot  Side
-J1        Conn_01x32_Pin    PinHeader_1x32_P2.54mm_Vertical        80.0700    -1.3300   90.0000  bottom
-J2        Conn_01x32_Pin    PinHeader_1x32_P2.54mm_Vertical        80.0700   -18.9800   90.0000  bottom
-C1        1uF               C_0603_1608Metric                      67.9800   -12.1100   90.0000  top
-C2        0.1uF             C_0603_1608Metric                      14.7500   -13.0350   90.0000  top
-C3        1uF               C_0603_1608Metric                      62.2200   -12.1200   90.0000  top
-C4        0.1uF             C_0603_1608Metric                      47.8000   -12.9600  180.0000  top
-C5        0.1uF             C_0603_1608Metric                      27.9300   -13.0400   90.0000  top
-C6        20pF              C_0603_1608Metric                      56.2300    -8.0100    0.0000  top
-C7        0.1uF             C_0603_1608Metric                      14.7400    -7.3500   90.0000  top
-C8        10pF              C_0603_1608Metric                      54.7200   -11.7800  180.0000  top
-C9        10pF              C_0603_1608Metric                      54.7200    -9.8100  180.0000  top
-C10       20pF              C_0603_1608Metric                      56.2400    -6.0600  180.0000  top
-D1        LED_Red           LED_0603_1608Metric                    63.4400    -6.0500    0.0000  top
-HOLE1     Hole-1mm          Hole-1mm                               -1.4600    -2.6000    0.0000  top
-HOLE2     Hole-1mm          Hole-1mm                               -1.4500   -17.7100    0.0000  top
-HOLE3     Hole-1mm          Hole-1mm                               82.8400    -2.6000    0.0000  top
-HOLE4     Hole-1mm          Hole-1mm                               82.8400   -17.7100    0.0000  top
-J3        Conn_01x04_Pin    PinHeader_1x04_P2.54mm_Vertical        -2.0100   -13.9700  180.0000  top
-L1        1KΩ_100Mhz       L_0603_1608Metric                      27.9300    -7.2450  -90.0000  top
-R1        2K                R_0603_1608Metric                      66.4000    -6.0500    0.0000  top
-R2        10K               R_0603_1608Metric                      26.0100   -13.0400  -90.0000  top
-R3        10K               R_0603_1608Metric                      25.9900    -7.2450  -90.0000  top
-R4        1M                R_0603_1608Metric                      49.5500    -7.0100   90.0000  top
-R5        10K               R_0603_1608Metric                      12.8100   -13.0350   90.0000  top
-R6        10K               R_0603_1608Metric                      12.8000    -7.3500   90.0000  top
-R7        50R               R_0603_1608Metric                      66.4000    -8.9700    0.0000  top
-R8        50R               R_0603_1608Metric                      66.4000    -7.5100    0.0000  top
-R9        1.5K              R_0603_1608Metric                      63.4400    -8.9700    0.0000  top
-SW1       BOOT0             KEY-SMD_4P-L4.2-W3.4-P2.15-LS4.7       20.0200   -13.0000  180.0000  top
-SW2       NRST              KEY-SMD_4P-L4.2-W3.4-P2.15-LS4.7       19.9900    -7.3600  180.0000  top
-U1        ME6211C33M5G-N    SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR      65.1000   -12.2800    0.0000  top
-U2        GD32F350RBT6      LQFP-64_L10.0-W10.0-P0.50-LS12.0-BL    38.1066   -10.1500  135.0000  top
-USB1      USB_Type_C_16Pin  USB-C-SMD_TYPEC-304J-BCP16             80.3800   -10.1564   90.0000  top
-Y1        32.768KHz         CRYSTAL-FC135-32.768                   52.0600   -10.7900  -90.0000  top
-Y2        8MHz              Crystal_SMD_3225-4Pin_3.2x2.5mm        52.5100    -7.0200  180.0000  top
+J1        Conn_01x32_Pin    PinHeader_1x32_P2.54mm_Vertical        -0.4100   -18.9900  -90.0000  bottom
+J2        Conn_01x32_Pin    PinHeader_1x32_P2.54mm_Vertical        -0.4100    -1.3400  -90.0000  bottom
+C1        1uF               C_0603_1608Metric                      11.6800    -8.2100  -90.0000  top
+C2        0.1uF             C_0603_1608Metric                      64.9100    -7.2850  -90.0000  top
+C3        1uF               C_0603_1608Metric                      17.4400    -8.2000  -90.0000  top
+C4        0.1uF             C_0603_1608Metric                      31.8600    -7.3600    0.0000  top
+C5        0.1uF             C_0603_1608Metric                      51.7300    -7.2800  -90.0000  top
+C6        20pF              C_0603_1608Metric                      23.4300   -12.3100  180.0000  top
+C7        0.1uF             C_0603_1608Metric                      64.9200   -12.9700  -90.0000  top
+C8        10pF              C_0603_1608Metric                      24.9400    -8.5400    0.0000  top
+C9        10pF              C_0603_1608Metric                      24.9400   -10.5100    0.0000  top
+C10       20pF              C_0603_1608Metric                      23.4200   -14.2600    0.0000  top
+D1        LED_Red           LED_0603_1608Metric                    16.2200   -14.2700  180.0000  top
+HOLE1     Hole-1mm          Hole-1mm                               81.1200   -17.7200  180.0000  top
+HOLE2     Hole-1mm          Hole-1mm                               81.1100    -2.6100  180.0000  top
+HOLE3     Hole-1mm          Hole-1mm                               -3.1800   -17.7200  180.0000  top
+HOLE4     Hole-1mm          Hole-1mm                               -3.1800    -2.6100  180.0000  top
+J3        Conn_01x04_Pin    PinHeader_1x04_P2.54mm_Vertical        81.6700    -6.3500    0.0000  top
+L1        1KΩ_100Mhz       L_0603_1608Metric                      51.7300   -13.0750   90.0000  top
+R1        2K                R_0603_1608Metric                      13.2600   -14.2700  180.0000  top
+R2        10K               R_0603_1608Metric                      53.6500    -7.2800   90.0000  top
+R3        10K               R_0603_1608Metric                      53.6700   -13.0750   90.0000  top
+R4        1M                R_0603_1608Metric                      30.1100   -13.3100  -90.0000  top
+R5        10K               R_0603_1608Metric                      66.8500    -7.2850  -90.0000  top
+R6        10K               R_0603_1608Metric                      66.8600   -12.9700  -90.0000  top
+R7        50R               R_0603_1608Metric                      13.2600   -11.3500  180.0000  top
+R8        50R               R_0603_1608Metric                      13.2600   -12.8100  180.0000  top
+R9        1.5K              R_0603_1608Metric                      16.2200   -11.3500  180.0000  top
+SW1       BOOT0             KEY-SMD_4P-L4.2-W3.4-P2.15-LS4.7       59.6400    -7.3200    0.0000  top
+SW2       NRST              KEY-SMD_4P-L4.2-W3.4-P2.15-LS4.7       59.6700   -12.9600    0.0000  top
+U1        ME6211C33M5G-N    SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR      14.5600    -8.0400  180.0000  top
+U2        GD32F350RBT6      LQFP-64_L10.0-W10.0-P0.50-LS12.0-BL    41.5534   -10.1700  -45.0000  top
+USB1      USB_Type_C_16Pin  USB-C-SMD_TYPEC-304J-BCP16             -0.7200   -10.1636  -90.0000  top
+Y1        32.768KHz         CRYSTAL-FC135-32.768                   27.6000    -9.5300   90.0000  top
+Y2        8MHz              Crystal_SMD_3225-4Pin_3.2x2.5mm        27.1500   -13.3000    0.0000  top
 ## End
