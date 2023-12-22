@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>Keil-Template-GD32F350RBT6</TargetName>
+      <TargetName>Keil-GD32F350RBT6</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
@@ -49,7 +49,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>Keil-Template-GD32F350RBT6.hex</OutputName>
+          <OutputName>Keil-GD32F350RBT6.hex</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -382,24 +382,22 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Sources</GroupName>
+          <GroupName>CMSIS</GroupName>
           <Files>
             <File>
-              <FileName>gd32f3x0_it.c</FileName>
+              <FileName>system_gd32f3x0.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Sources\gd32f3x0_it.c</FilePath>
+              <FilePath>.\Firmware\CMSIS\GD\GD32F3x0\Source\system_gd32f3x0.c</FilePath>
             </File>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Sources\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>systick.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Sources\systick.c</FilePath>
+              <FileName>startup_gd32f3x0.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\Firmware\CMSIS\GD\GD32F3x0\Source\ARM\startup_gd32f3x0.s</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers</GroupName>
         </Group>
         <Group>
           <GroupName>Firmware</GroupName>
@@ -522,21 +520,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>CMSIS</GroupName>
-          <Files>
-            <File>
-              <FileName>system_gd32f3x0.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Firmware\CMSIS\GD\GD32F3x0\Source\system_gd32f3x0.c</FilePath>
-            </File>
-            <File>
-              <FileName>startup_gd32f3x0.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\Firmware\CMSIS\GD\GD32F3x0\Source\ARM\startup_gd32f3x0.s</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Documents</GroupName>
           <Files>
             <File>
@@ -547,7 +530,27 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Application</GroupName>
+          <GroupName>Applications</GroupName>
+        </Group>
+        <Group>
+          <GroupName>Sources</GroupName>
+          <Files>
+            <File>
+              <FileName>gd32f3x0_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\gd32f3x0_it.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\systick.c</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>
