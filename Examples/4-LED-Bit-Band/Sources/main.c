@@ -15,6 +15,6 @@ int main(void) {
         GPIOB_Out(8) = 1;      // GPIOB8 输出高电平
         SysTick_Delay_MS(1000);
         GPIOB_Out(8) = 0;      // GPIOB8 输出低电平
-        SysTick_Delay_US(1000000);
+        SysTick_Delay_MS(1000);
     }
 }
