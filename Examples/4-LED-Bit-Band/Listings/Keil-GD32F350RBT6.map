@@ -106,7 +106,8 @@ Section Cross References
     gd32f3x0_it.o(i.SysTick_Handler) refers to systick_1.o(i.delay_decrement) for delay_decrement
     main.o(i.main) refers to systick_1.o(i.systick_config) for systick_config
     main.o(i.main) refers to led.o(i.LED_GPIO_Config) for LED_GPIO_Config
-    main.o(i.main) refers to systick_1.o(i.delay_1ms) for delay_1ms
+    main.o(i.main) refers to systick.o(i.SysTick_Delay_MS) for SysTick_Delay_MS
+    main.o(i.main) refers to systick.o(i.SysTick_Delay_US) for SysTick_Delay_US
     systick_1.o(i.delay_1ms) refers to systick_1.o(.data) for delay
     systick_1.o(i.delay_decrement) refers to systick_1.o(.data) for delay
     systick_1.o(i.systick_config) refers to systick_1.o(i.NVIC_SetPriority) for NVIC_SetPriority
@@ -141,9 +142,6 @@ Removing Unused input sections from the image.
     Removing led.o(.revsh_text), (4 bytes).
     Removing systick.o(.rev16_text), (4 bytes).
     Removing systick.o(.revsh_text), (4 bytes).
-    Removing systick.o(i.SysTick_Config), (84 bytes).
-    Removing systick.o(i.SysTick_Delay_MS), (72 bytes).
-    Removing systick.o(i.SysTick_Delay_US), (72 bytes).
     Removing gd32f3x0_adc.o(.rev16_text), (4 bytes).
     Removing gd32f3x0_adc.o(.revsh_text), (4 bytes).
     Removing gd32f3x0_adc.o(i.adc_calibration_enable), (60 bytes).
@@ -790,8 +788,9 @@ Removing Unused input sections from the image.
     Removing main.o(.revsh_text), (4 bytes).
     Removing systick_1.o(.rev16_text), (4 bytes).
     Removing systick_1.o(.revsh_text), (4 bytes).
+    Removing systick_1.o(i.delay_1ms), (20 bytes).
 
-657 unused section(s) (total 25200 bytes) removed from the image.
+655 unused section(s) (total 24992 bytes) removed from the image.
 
 ==============================================================================
 
@@ -801,21 +800,21 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     Drivers\LED\LED.c                        0x00000000   Number         0  led.o ABSOLUTE
     Drivers\SysTick\SysTick.c                0x00000000   Number         0  systick.o ABSOLUTE
     Drivers\\LED\\LED.c                      0x00000000   Number         0  led.o ABSOLUTE
@@ -903,24 +902,27 @@ Image Symbol Table
     NVIC_SetPriority                         0x080001f1   Thumb Code    32  systick_1.o(i.NVIC_SetPriority)
     i.PendSV_Handler                         0x08000218   Section        0  gd32f3x0_it.o(i.PendSV_Handler)
     i.SVC_Handler                            0x0800021a   Section        0  gd32f3x0_it.o(i.SVC_Handler)
-    i.SysTick_Handler                        0x0800021c   Section        0  gd32f3x0_it.o(i.SysTick_Handler)
-    i.SystemInit                             0x08000224   Section        0  system_gd32f3x0.o(i.SystemInit)
-    i.UsageFault_Handler                     0x0800046c   Section        0  gd32f3x0_it.o(i.UsageFault_Handler)
-    i.__scatterload_copy                     0x08000470   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x0800047e   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08000480   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.delay_1ms                              0x08000490   Section        0  systick_1.o(i.delay_1ms)
-    i.delay_decrement                        0x080004a4   Section        0  systick_1.o(i.delay_decrement)
-    i.gpio_mode_set                          0x080004bc   Section        0  gd32f3x0_gpio.o(i.gpio_mode_set)
-    i.gpio_output_options_set                0x0800050a   Section        0  gd32f3x0_gpio.o(i.gpio_output_options_set)
-    i.main                                   0x08000588   Section        0  main.o(i.main)
-    i.nvic_vector_table_set                  0x080005bc   Section        0  gd32f3x0_misc.o(i.nvic_vector_table_set)
-    i.rcu_periph_clock_enable                0x080005d4   Section        0  gd32f3x0_rcu.o(i.rcu_periph_clock_enable)
-    i.system_clock_108m_hxtal                0x080005f4   Section        0  system_gd32f3x0.o(i.system_clock_108m_hxtal)
-    system_clock_108m_hxtal                  0x080005f5   Thumb Code   192  system_gd32f3x0.o(i.system_clock_108m_hxtal)
-    i.system_clock_config                    0x080006c4   Section        0  system_gd32f3x0.o(i.system_clock_config)
-    system_clock_config                      0x080006c5   Thumb Code     8  system_gd32f3x0.o(i.system_clock_config)
-    i.systick_config                         0x080006cc   Section        0  systick_1.o(i.systick_config)
+    i.SysTick_Config                         0x0800021c   Section        0  systick.o(i.SysTick_Config)
+    SysTick_Config                           0x0800021d   Thumb Code    74  systick.o(i.SysTick_Config)
+    i.SysTick_Delay_MS                       0x08000270   Section        0  systick.o(i.SysTick_Delay_MS)
+    i.SysTick_Delay_US                       0x080002b8   Section        0  systick.o(i.SysTick_Delay_US)
+    i.SysTick_Handler                        0x08000300   Section        0  gd32f3x0_it.o(i.SysTick_Handler)
+    i.SystemInit                             0x08000308   Section        0  system_gd32f3x0.o(i.SystemInit)
+    i.UsageFault_Handler                     0x08000550   Section        0  gd32f3x0_it.o(i.UsageFault_Handler)
+    i.__scatterload_copy                     0x08000554   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08000562   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08000564   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.delay_decrement                        0x08000574   Section        0  systick_1.o(i.delay_decrement)
+    i.gpio_mode_set                          0x0800058c   Section        0  gd32f3x0_gpio.o(i.gpio_mode_set)
+    i.gpio_output_options_set                0x080005da   Section        0  gd32f3x0_gpio.o(i.gpio_output_options_set)
+    i.main                                   0x08000658   Section        0  main.o(i.main)
+    i.nvic_vector_table_set                  0x0800068c   Section        0  gd32f3x0_misc.o(i.nvic_vector_table_set)
+    i.rcu_periph_clock_enable                0x080006a4   Section        0  gd32f3x0_rcu.o(i.rcu_periph_clock_enable)
+    i.system_clock_108m_hxtal                0x080006c4   Section        0  system_gd32f3x0.o(i.system_clock_108m_hxtal)
+    system_clock_108m_hxtal                  0x080006c5   Thumb Code   192  system_gd32f3x0.o(i.system_clock_108m_hxtal)
+    i.system_clock_config                    0x08000794   Section        0  system_gd32f3x0.o(i.system_clock_config)
+    system_clock_config                      0x08000795   Thumb Code     8  system_gd32f3x0.o(i.system_clock_config)
+    i.systick_config                         0x0800079c   Section        0  systick_1.o(i.systick_config)
     .data                                    0x20000000   Section        4  system_gd32f3x0.o(.data)
     .data                                    0x20000004   Section        4  systick_1.o(.data)
     delay                                    0x20000004   Data           4  systick_1.o(.data)
@@ -996,22 +998,23 @@ Image Symbol Table
     NMI_Handler                              0x080001ed   Thumb Code     2  gd32f3x0_it.o(i.NMI_Handler)
     PendSV_Handler                           0x08000219   Thumb Code     2  gd32f3x0_it.o(i.PendSV_Handler)
     SVC_Handler                              0x0800021b   Thumb Code     2  gd32f3x0_it.o(i.SVC_Handler)
-    SysTick_Handler                          0x0800021d   Thumb Code     8  gd32f3x0_it.o(i.SysTick_Handler)
-    SystemInit                               0x08000225   Thumb Code   534  system_gd32f3x0.o(i.SystemInit)
-    UsageFault_Handler                       0x0800046d   Thumb Code     4  gd32f3x0_it.o(i.UsageFault_Handler)
-    __scatterload_copy                       0x08000471   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x0800047f   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08000481   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    delay_1ms                                0x08000491   Thumb Code    16  systick_1.o(i.delay_1ms)
-    delay_decrement                          0x080004a5   Thumb Code    18  systick_1.o(i.delay_decrement)
-    gpio_mode_set                            0x080004bd   Thumb Code    78  gd32f3x0_gpio.o(i.gpio_mode_set)
-    gpio_output_options_set                  0x0800050b   Thumb Code   124  gd32f3x0_gpio.o(i.gpio_output_options_set)
-    main                                     0x08000589   Thumb Code    42  main.o(i.main)
-    nvic_vector_table_set                    0x080005bd   Thumb Code    16  gd32f3x0_misc.o(i.nvic_vector_table_set)
-    rcu_periph_clock_enable                  0x080005d5   Thumb Code    28  gd32f3x0_rcu.o(i.rcu_periph_clock_enable)
-    systick_config                           0x080006cd   Thumb Code    74  systick_1.o(i.systick_config)
-    Region$$Table$$Base                      0x0800071c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800073c   Number         0  anon$$obj.o(Region$$Table)
+    SysTick_Delay_MS                         0x08000271   Thumb Code    66  systick.o(i.SysTick_Delay_MS)
+    SysTick_Delay_US                         0x080002b9   Thumb Code    64  systick.o(i.SysTick_Delay_US)
+    SysTick_Handler                          0x08000301   Thumb Code     8  gd32f3x0_it.o(i.SysTick_Handler)
+    SystemInit                               0x08000309   Thumb Code   534  system_gd32f3x0.o(i.SystemInit)
+    UsageFault_Handler                       0x08000551   Thumb Code     4  gd32f3x0_it.o(i.UsageFault_Handler)
+    __scatterload_copy                       0x08000555   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08000563   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08000565   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    delay_decrement                          0x08000575   Thumb Code    18  systick_1.o(i.delay_decrement)
+    gpio_mode_set                            0x0800058d   Thumb Code    78  gd32f3x0_gpio.o(i.gpio_mode_set)
+    gpio_output_options_set                  0x080005db   Thumb Code   124  gd32f3x0_gpio.o(i.gpio_output_options_set)
+    main                                     0x08000659   Thumb Code    40  main.o(i.main)
+    nvic_vector_table_set                    0x0800068d   Thumb Code    16  gd32f3x0_misc.o(i.nvic_vector_table_set)
+    rcu_periph_clock_enable                  0x080006a5   Thumb Code    28  gd32f3x0_rcu.o(i.rcu_periph_clock_enable)
+    systick_config                           0x0800079d   Thumb Code    74  systick_1.o(i.systick_config)
+    Region$$Table$$Base                      0x080007ec   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800080c   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_gd32f3x0.o(.data)
     __initial_sp                             0x20000408   Data           0  startup_gd32f3x0.o(STACK)
 
@@ -1023,25 +1026,25 @@ Memory Map of the image
 
   Image Entry point : 0x08000151
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00000744, Max: 0x00020000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00000814, Max: 0x00020000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000073c, Max: 0x00020000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000080c, Max: 0x00020000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x00000150   Data   RO          139    RESET               startup_gd32f3x0.o
-    0x08000150   0x08000150   0x00000000   Code   RO         4267  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000150   0x08000150   0x00000004   Code   RO         4270    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x08000154   0x08000154   0x00000004   Code   RO         4273    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000158   0x08000158   0x00000000   Code   RO         4275    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000158   0x08000158   0x00000000   Code   RO         4277    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000158   0x08000158   0x00000008   Code   RO         4278    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000160   0x08000160   0x00000004   Code   RO         4285    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
-    0x08000164   0x08000164   0x00000000   Code   RO         4280    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
-    0x08000164   0x08000164   0x00000000   Code   RO         4282    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
-    0x08000164   0x08000164   0x00000004   Code   RO         4271    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000150   0x08000150   0x00000000   Code   RO         4270  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000150   0x08000150   0x00000004   Code   RO         4273    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x08000154   0x08000154   0x00000004   Code   RO         4276    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000158   0x08000158   0x00000000   Code   RO         4278    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000158   0x08000158   0x00000000   Code   RO         4280    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000158   0x08000158   0x00000008   Code   RO         4281    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000160   0x08000160   0x00000004   Code   RO         4288    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
+    0x08000164   0x08000164   0x00000000   Code   RO         4283    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
+    0x08000164   0x08000164   0x00000000   Code   RO         4285    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
+    0x08000164   0x08000164   0x00000004   Code   RO         4274    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x08000168   0x08000168   0x00000024   Code   RO          140    .text               startup_gd32f3x0.o
-    0x0800018c   0x0800018c   0x00000024   Code   RO         4286    .text               mc_w.l(init.o)
+    0x0800018c   0x0800018c   0x00000024   Code   RO         4289    .text               mc_w.l(init.o)
     0x080001b0   0x080001b0   0x00000004   Code   RO         4119    i.BusFault_Handler  gd32f3x0_it.o
     0x080001b4   0x080001b4   0x00000002   Code   RO         4120    i.DebugMon_Handler  gd32f3x0_it.o
     0x080001b6   0x080001b6   0x00000004   Code   RO         4121    i.HardFault_Handler  gd32f3x0_it.o
@@ -1050,36 +1053,38 @@ Memory Map of the image
     0x080001e8   0x080001e8   0x00000004   Code   RO         4122    i.MemManage_Handler  gd32f3x0_it.o
     0x080001ec   0x080001ec   0x00000002   Code   RO         4123    i.NMI_Handler       gd32f3x0_it.o
     0x080001ee   0x080001ee   0x00000002   PAD
-    0x080001f0   0x080001f0   0x00000028   Code   RO         4226    i.NVIC_SetPriority  systick_1.o
+    0x080001f0   0x080001f0   0x00000028   Code   RO         4229    i.NVIC_SetPriority  systick_1.o
     0x08000218   0x08000218   0x00000002   Code   RO         4124    i.PendSV_Handler    gd32f3x0_it.o
     0x0800021a   0x0800021a   0x00000002   Code   RO         4125    i.SVC_Handler       gd32f3x0_it.o
-    0x0800021c   0x0800021c   0x00000008   Code   RO         4126    i.SysTick_Handler   gd32f3x0_it.o
-    0x08000224   0x08000224   0x00000248   Code   RO            4    i.SystemInit        system_gd32f3x0.o
-    0x0800046c   0x0800046c   0x00000004   Code   RO         4127    i.UsageFault_Handler  gd32f3x0_it.o
-    0x08000470   0x08000470   0x0000000e   Code   RO         4290    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0800047e   0x0800047e   0x00000002   Code   RO         4291    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08000480   0x08000480   0x0000000e   Code   RO         4292    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x0800048e   0x0800048e   0x00000002   PAD
-    0x08000490   0x08000490   0x00000014   Code   RO         4227    i.delay_1ms         systick_1.o
-    0x080004a4   0x080004a4   0x00000018   Code   RO         4228    i.delay_decrement   systick_1.o
-    0x080004bc   0x080004bc   0x0000004e   Code   RO         1660    i.gpio_mode_set     gd32f3x0_gpio.o
-    0x0800050a   0x0800050a   0x0000007c   Code   RO         1662    i.gpio_output_options_set  gd32f3x0_gpio.o
-    0x08000586   0x08000586   0x00000002   PAD
-    0x08000588   0x08000588   0x00000034   Code   RO         4196    i.main              main.o
-    0x080005bc   0x080005bc   0x00000018   Code   RO         1959    i.nvic_vector_table_set  gd32f3x0_misc.o
-    0x080005d4   0x080005d4   0x00000020   Code   RO         2177    i.rcu_periph_clock_enable  gd32f3x0_rcu.o
-    0x080005f4   0x080005f4   0x000000d0   Code   RO            5    i.system_clock_108m_hxtal  system_gd32f3x0.o
-    0x080006c4   0x080006c4   0x00000008   Code   RO            6    i.system_clock_config  system_gd32f3x0.o
-    0x080006cc   0x080006cc   0x00000050   Code   RO         4229    i.systick_config    systick_1.o
-    0x0800071c   0x0800071c   0x00000020   Data   RO         4288    Region$$Table       anon$$obj.o
+    0x0800021c   0x0800021c   0x00000054   Code   RO          176    i.SysTick_Config    systick.o
+    0x08000270   0x08000270   0x00000048   Code   RO          177    i.SysTick_Delay_MS  systick.o
+    0x080002b8   0x080002b8   0x00000048   Code   RO          178    i.SysTick_Delay_US  systick.o
+    0x08000300   0x08000300   0x00000008   Code   RO         4126    i.SysTick_Handler   gd32f3x0_it.o
+    0x08000308   0x08000308   0x00000248   Code   RO            4    i.SystemInit        system_gd32f3x0.o
+    0x08000550   0x08000550   0x00000004   Code   RO         4127    i.UsageFault_Handler  gd32f3x0_it.o
+    0x08000554   0x08000554   0x0000000e   Code   RO         4293    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08000562   0x08000562   0x00000002   Code   RO         4294    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08000564   0x08000564   0x0000000e   Code   RO         4295    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08000572   0x08000572   0x00000002   PAD
+    0x08000574   0x08000574   0x00000018   Code   RO         4231    i.delay_decrement   systick_1.o
+    0x0800058c   0x0800058c   0x0000004e   Code   RO         1660    i.gpio_mode_set     gd32f3x0_gpio.o
+    0x080005da   0x080005da   0x0000007c   Code   RO         1662    i.gpio_output_options_set  gd32f3x0_gpio.o
+    0x08000656   0x08000656   0x00000002   PAD
+    0x08000658   0x08000658   0x00000034   Code   RO         4196    i.main              main.o
+    0x0800068c   0x0800068c   0x00000018   Code   RO         1959    i.nvic_vector_table_set  gd32f3x0_misc.o
+    0x080006a4   0x080006a4   0x00000020   Code   RO         2177    i.rcu_periph_clock_enable  gd32f3x0_rcu.o
+    0x080006c4   0x080006c4   0x000000d0   Code   RO            5    i.system_clock_108m_hxtal  system_gd32f3x0.o
+    0x08000794   0x08000794   0x00000008   Code   RO            6    i.system_clock_config  system_gd32f3x0.o
+    0x0800079c   0x0800079c   0x00000050   Code   RO         4232    i.systick_config    systick_1.o
+    0x080007ec   0x080007ec   0x00000020   Data   RO         4291    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800073c, Size: 0x00000408, Max: 0x00004000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800080c, Size: 0x00000408, Max: 0x00004000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x0800073c   0x00000004   Data   RW            7    .data               system_gd32f3x0.o
-    0x20000004   0x08000740   0x00000004   Data   RW         4230    .data               systick_1.o
+    0x20000000   0x0800080c   0x00000004   Data   RW            7    .data               system_gd32f3x0.o
+    0x20000004   0x08000810   0x00000004   Data   RW         4233    .data               systick_1.o
     0x20000008        -       0x00000400   Zero   RW          137    STACK               startup_gd32f3x0.o
 
 
@@ -1095,13 +1100,14 @@ Image component sizes
         24          8          0          0          0        648   gd32f3x0_misc.o
         32          4          0          0          0        602   gd32f3x0_rcu.o
         44          4          0          0          0        494   led.o
-        52         10          0          0          0        495   main.o
+        52         12          0          0          0        495   main.o
         36          8        336          0       1024        888   startup_gd32f3x0.o
        800         66          0          4          0      27859   system_gd32f3x0.o
-       164         24          0          4          0      27402   systick_1.o
+       228         24          0          0          0      26873   systick.o
+       144         20          0          4          0      26906   systick_1.o
 
     ----------------------------------------------------------------------
-      1392        124        368          8       1024      64468   Object Totals
+      1600        146        368          8       1024      90845   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          6          0          0          0          0          0   (incl. Padding)
 
@@ -1141,15 +1147,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1484        140        368          8       1024      62940   Grand Totals
-      1484        140        368          8       1024      62940   ELF Image Totals
-      1484        140        368          8          0          0   ROM Totals
+      1692        162        368          8       1024      89117   Grand Totals
+      1692        162        368          8       1024      89117   ELF Image Totals
+      1692        162        368          8          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1852 (   1.81kB)
+    Total RO  Size (Code + RO Data)                 2060 (   2.01kB)
     Total RW  Size (RW Data + ZI Data)              1032 (   1.01kB)
-    Total ROM Size (Code + RO Data + RW Data)       1860 (   1.82kB)
+    Total ROM Size (Code + RO Data + RW Data)       2068 (   2.02kB)
 
 ==============================================================================
 

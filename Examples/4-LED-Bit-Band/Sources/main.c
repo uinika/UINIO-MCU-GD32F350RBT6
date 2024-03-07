@@ -5,24 +5,16 @@
 #include "main.h"
 #include "../Drivers/LED/LED.h"
 #include "../Drivers/SysTick/SysTick.h"
-
-/* 偏移量 = GPIOB 基地址 0x48000400 + GPIOx_OCTL 偏移量 0x14 - 片上外设起始地址 0x40000000 */
-#define GPIOB_OCTL_OFFSET ((GPIOB + 0x14) - 0x40000000)
-
-/* 位带别名区的字地址 = 位带别名区起始地址 + (位带区目标位所在字节的地址偏移量 × 32) + (目标位在对应字节当中的位置 × 4) */
-#define BIT_ADDRESS(byte_offset, bit_number) (volatile unsigned long *)(0x42000000 + (byte_offset << 5) + (bit_number << 2))
-
-/* 配置 GPIOB 端口指定引脚的输出状态，例如 GPIOB_OUT(8) */
-#define GPIOB_OUT(number) *(BIT_ADDRESS(GPIOB_OCTL_OFFSET, number))
+#include "../Drivers/BitBand/BitBand.h"
 
 int main(void) {
     systick_config();  // 初始化系统滴答定时器
     LED_GPIO_Config(); // 初始化 LED 相关的 GPIO 引脚
 
     while(1) {
-        GPIOB_OUT(8) = 1;      // GPIOB8 输出高电平
-        delay_1ms(1000);
-        GPIOB_OUT(8) = 0;      // GPIOB8 输出低电平
-        delay_1ms(1000);
+        GPIOB_Out(8) = 1;      // GPIOB8 输出高电平
+        SysTick_Delay_MS(1000);
+        GPIOB_Out(8) = 0;      // GPIOB8 输出低电平
+        SysTick_Delay_US(1000000);
     }
 }

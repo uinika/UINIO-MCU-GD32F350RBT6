@@ -419,6 +419,11 @@
               <FileType>5</FileType>
               <FilePath>.\Drivers\SysTick\SysTick.h</FilePath>
             </File>
+            <File>
+              <FileName>BitBand.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\BitBand\BitBand.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
