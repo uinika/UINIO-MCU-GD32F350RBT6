@@ -1,8 +1,8 @@
 /*========== main.c ==========*/
 #include "gd32f3x0.h"
 #include "systick.h"
-#include <stdio.h>
 #include "main.h"
+
 #include "../Drivers/LED/LED.h"
 #include "../Drivers/Key/Key.h"
 #include "../Drivers/SysTick/SysTick.h"

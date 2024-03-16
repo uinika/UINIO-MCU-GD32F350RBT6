@@ -1046,24 +1046,24 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x00000150   Data   RO          139    RESET               startup_gd32f3x0.o
-    0x08000150   0x08000150   0x00000000   Code   RO         4302  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000150   0x08000150   0x00000004   Code   RO         4305    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x08000154   0x08000154   0x00000004   Code   RO         4308    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000158   0x08000158   0x00000000   Code   RO         4310    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000158   0x08000158   0x00000000   Code   RO         4312    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000158   0x08000158   0x00000008   Code   RO         4313    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000160   0x08000160   0x00000004   Code   RO         4320    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
-    0x08000164   0x08000164   0x00000000   Code   RO         4315    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
-    0x08000164   0x08000164   0x00000000   Code   RO         4317    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
-    0x08000164   0x08000164   0x00000004   Code   RO         4306    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000150   0x08000150   0x00000000   Code   RO         4298  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000150   0x08000150   0x00000004   Code   RO         4301    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x08000154   0x08000154   0x00000004   Code   RO         4304    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000158   0x08000158   0x00000000   Code   RO         4306    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000158   0x08000158   0x00000000   Code   RO         4308    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000158   0x08000158   0x00000008   Code   RO         4309    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000160   0x08000160   0x00000004   Code   RO         4316    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
+    0x08000164   0x08000164   0x00000000   Code   RO         4311    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
+    0x08000164   0x08000164   0x00000000   Code   RO         4313    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
+    0x08000164   0x08000164   0x00000004   Code   RO         4302    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x08000168   0x08000168   0x00000024   Code   RO          140    .text               startup_gd32f3x0.o
-    0x0800018c   0x0800018c   0x00000024   Code   RO         4321    .text               mc_w.l(init.o)
+    0x0800018c   0x0800018c   0x00000024   Code   RO         4317    .text               mc_w.l(init.o)
     0x080001b0   0x080001b0   0x00000004   Code   RO         4151    i.BusFault_Handler  gd32f3x0_it.o
     0x080001b4   0x080001b4   0x00000002   Code   RO         4152    i.DebugMon_Handler  gd32f3x0_it.o
     0x080001b6   0x080001b6   0x00000004   Code   RO         4153    i.HardFault_Handler  gd32f3x0_it.o
     0x080001ba   0x080001ba   0x00000004   Code   RO         4154    i.MemManage_Handler  gd32f3x0_it.o
     0x080001be   0x080001be   0x00000002   Code   RO         4155    i.NMI_Handler       gd32f3x0_it.o
-    0x080001c0   0x080001c0   0x00000028   Code   RO         4261    i.NVIC_SetPriority  systick_1.o
+    0x080001c0   0x080001c0   0x00000028   Code   RO         4257    i.NVIC_SetPriority  systick_1.o
     0x080001e8   0x080001e8   0x00000002   Code   RO         4156    i.PendSV_Handler    gd32f3x0_it.o
     0x080001ea   0x080001ea   0x00000002   Code   RO         4157    i.SVC_Handler       gd32f3x0_it.o
     0x080001ec   0x080001ec   0x00000008   Code   RO         4158    i.SysTick_Handler   gd32f3x0_it.o
@@ -1072,12 +1072,12 @@ Memory Map of the image
     0x0800045c   0x0800045c   0x00000044   Code   RO          215    i.UINIO_Key_Scan    key.o
     0x080004a0   0x080004a0   0x0000002c   Code   RO          146    i.UINIO_LED_GPIO_Config  led.o
     0x080004cc   0x080004cc   0x00000004   Code   RO         4159    i.UsageFault_Handler  gd32f3x0_it.o
-    0x080004d0   0x080004d0   0x0000000e   Code   RO         4325    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x080004de   0x080004de   0x00000002   Code   RO         4326    i.__scatterload_null  mc_w.l(handlers.o)
-    0x080004e0   0x080004e0   0x0000000e   Code   RO         4327    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x080004d0   0x080004d0   0x0000000e   Code   RO         4321    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x080004de   0x080004de   0x00000002   Code   RO         4322    i.__scatterload_null  mc_w.l(handlers.o)
+    0x080004e0   0x080004e0   0x0000000e   Code   RO         4323    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x080004ee   0x080004ee   0x00000002   PAD
-    0x080004f0   0x080004f0   0x00000014   Code   RO         4262    i.delay_1ms         systick_1.o
-    0x08000504   0x08000504   0x00000018   Code   RO         4263    i.delay_decrement   systick_1.o
+    0x080004f0   0x080004f0   0x00000014   Code   RO         4258    i.delay_1ms         systick_1.o
+    0x08000504   0x08000504   0x00000018   Code   RO         4259    i.delay_decrement   systick_1.o
     0x0800051c   0x0800051c   0x00000004   Code   RO         1687    i.gpio_bit_toggle   gd32f3x0_gpio.o
     0x08000520   0x08000520   0x00000010   Code   RO         1690    i.gpio_input_bit_get  gd32f3x0_gpio.o
     0x08000530   0x08000530   0x0000004e   Code   RO         1692    i.gpio_mode_set     gd32f3x0_gpio.o
@@ -1088,8 +1088,8 @@ Memory Map of the image
     0x08000628   0x08000628   0x00000020   Code   RO         2209    i.rcu_periph_clock_enable  gd32f3x0_rcu.o
     0x08000648   0x08000648   0x000000d0   Code   RO            5    i.system_clock_108m_hxtal  system_gd32f3x0.o
     0x08000718   0x08000718   0x00000008   Code   RO            6    i.system_clock_config  system_gd32f3x0.o
-    0x08000720   0x08000720   0x00000050   Code   RO         4264    i.systick_config    systick_1.o
-    0x08000770   0x08000770   0x00000020   Data   RO         4323    Region$$Table       anon$$obj.o
+    0x08000720   0x08000720   0x00000050   Code   RO         4260    i.systick_config    systick_1.o
+    0x08000770   0x08000770   0x00000020   Data   RO         4319    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08000790, Size: 0x00000408, Max: 0x00004000, ABSOLUTE)
@@ -1097,7 +1097,7 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000   0x08000790   0x00000004   Data   RW            7    .data               system_gd32f3x0.o
-    0x20000004   0x08000794   0x00000004   Data   RW         4265    .data               systick_1.o
+    0x20000004   0x08000794   0x00000004   Data   RW         4261    .data               systick_1.o
     0x20000008        -       0x00000400   Zero   RW          137    STACK               startup_gd32f3x0.o
 
 
