@@ -1,3 +1,4 @@
+/*========== BitBand.h ==========*/
 #define BITBAND(address, bit_number) ((address & 0xF0000000) + 0x02000000 + ((address & 0x00FFFFFF) << 5) + (bit_number << 2)) // 将位带区地址和位序号转换为位带别名区地址
 #define ADDRESS_POINTER(address)         *((volatile unsigned long  *)(address))                                               // 将地址转换为 unsigned long 类型指针
 #define BIT_ADDRESS(address, bit_number) ADDRESS_POINTER(BITBAND(address, bit_number))                                         // 使用前面定义的宏定义语句 BITBAND()，将位带别名区地址转换为指针

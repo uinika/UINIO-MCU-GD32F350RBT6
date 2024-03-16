@@ -1,3 +1,4 @@
+/*========== Key.h ==========*/
 #include "Key.h"
 #include "../LED/LED.h"
 
@@ -7,7 +8,7 @@ void UINIO_Key_GPIO_Config(void) {
   gpio_mode_set(UINIO_KEY_PORT, GPIO_MODE_INPUT, GPIO_PUPD_PULLDOWN, UINIO_KEY_PIN); // 配置 GPIO 为输入下拉模式
 }
 
-/* 按键对应 GPIO 引脚的配置函数 */
+/* 按键扫描函数 */
 void UINIO_Key_Scan(void) {
   /* 判断按键引脚的电平状态（高电平按下，低电平松开） */
   if (gpio_input_bit_get(UINIO_KEY_PORT, UINIO_KEY_PIN) == SET) { // 按键按下
