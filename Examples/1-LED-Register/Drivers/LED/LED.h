@@ -1,21 +1,21 @@
 /*========== LED.h ==========*/
-#ifndef _Driver_LED_H
-#define _Driver_LED_H
+#ifndef UINIO_Driver_LED_H
+#define UINIO_Driver_LED_H
 
 #include "gd32f3x0.h"
 #include "systick.h"
 
-#define Driver_RCU_BASE (unsigned int)0x40021000U                       // RCU ¼Ä´æÆ÷µÄ»ùµØÖ·
-#define Driver_RCU_AHBEN *(unsigned int *)(Driver_RCU_BASE + 0x14U)     // AHB Ê¹ÄÜ¼Ä´æÆ÷µØÖ·
+#define UINIO_RCU_BASE (unsigned int)0x40021000U                      // RCU å¯„å­˜å™¨çš„åŸºåœ°å€
+#define UINIO_RCU_AHBEN *(unsigned int *)(UINIO_RCU_BASE + 0x14U)     // AHB ä½¿èƒ½å¯„å­˜å™¨åœ°å€
 
-#define Driver_GPIOB_BASE (unsigned int)0x48000400U                     // GPIOB µÄ»ùµØÖ·
-#define Driver_GPIOB_CTL *(unsigned int *)(Driver_GPIOB_BASE + 0x00U)   // GPIOB ¿ØÖÆ¼Ä´æÆ÷µÄµØÖ·
-#define Driver_GPIOB_PUD *(unsigned int *)(Driver_GPIOB_BASE + 0x0CU)   // GPIOB µÄÉÏÏÂÀ­¼Ä´æÆ÷µÄµØÖ·
-#define Driver_GPIOB_OMODE *(unsigned int *)(Driver_GPIOB_BASE + 0x04U) // GPIOB µÄÊä³öÄ£Ê½¼Ä´æÆ÷µÄµØÖ·
-#define Driver_GPIOB_OSPD *(unsigned int *)(Driver_GPIOB_BASE + 0x08U)  // GPIOB µÄËÙ¶È¼Ä´æÆ÷µÄµØÖ·
-#define Driver_GPIOB_OCTL *(unsigned int *)(Driver_GPIOB_BASE + 0x14U)  // GPIOB µÄÊä³ö¿ØÖÆ¼Ä´æÆ÷µÄµØÖ·
-#define Driver_GPIOB_BOP *(unsigned int *)(Driver_GPIOB_BASE + 0x18U)   // GPIOB µÄÎ»²Ù×÷¼Ä´æÆ÷µÄµØÖ·
+#define UINIO_GPIOB_BASE (unsigned int)0x48000400U                    // GPIOB çš„åŸºåœ°å€
+#define UINIO_GPIOB_CTL *(unsigned int *)(UINIO_GPIOB_BASE + 0x00U)   // GPIOB æ§åˆ¶å¯„å­˜å™¨çš„åœ°å€
+#define UINIO_GPIOB_PUD *(unsigned int *)(UINIO_GPIOB_BASE + 0x0CU)   // GPIOB çš„ä¸Šä¸‹æ‹‰å¯„å­˜å™¨çš„åœ°å€
+#define UINIO_GPIOB_OMODE *(unsigned int *)(UINIO_GPIOB_BASE + 0x04U) // GPIOB çš„è¾“å‡ºæ¨¡å¼å¯„å­˜å™¨çš„åœ°å€
+#define UINIO_GPIOB_OSPD *(unsigned int *)(UINIO_GPIOB_BASE + 0x08U)  // GPIOB çš„é€Ÿåº¦å¯„å­˜å™¨çš„åœ°å€
+#define UINIO_GPIOB_OCTL *(unsigned int *)(UINIO_GPIOB_BASE + 0x14U)  // GPIOB çš„è¾“å‡ºæ§åˆ¶å¯„å­˜å™¨çš„åœ°å€
+#define UINIO_GPIOB_BOP *(unsigned int *)(UINIO_GPIOB_BASE + 0x18U)   // GPIOB çš„ä½æ“ä½œå¯„å­˜å™¨çš„åœ°å€
 
-void LED_GPIO_Config(void); // LED Ïà¹ØµÄ GPIO ¶Ë¿ÚÅäÖÃº¯Êı
+void UINIO_LED_GPIO_Config(void); // LED ç›¸å…³çš„ GPIO ç«¯å£é…ç½®å‡½æ•°
 
-#endif /* _Driver_LED_H */
+#endif /* UINIO_Driver_LED_H */

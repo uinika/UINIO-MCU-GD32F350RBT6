@@ -1,21 +1,20 @@
 /*========== main.c ==========*/
 #include "gd32f3x0.h"
-#include "systick.h"
-#include <stdio.h>
 #include "main.h"
+
 #include "../Drivers/LED/LED.h"
 
 int main(void) {
-    systick_config();  // ÅäÖÃÏµÍ³µÎ´ğ¶¨Ê±Æ÷
-    LED_GPIO_Config(); // ÅäÖÃÁ¬½Ó LED µÄ GPIO ¶Ë¿Ú
+  systick_config();        // é…ç½®ç³»ç»Ÿæ»´ç­”å®šæ—¶å™¨
+  UINIO_LED_GPIO_Config(); // é…ç½®è¿æ¥ LED çš„ GPIO ç«¯å£
 
-    /* ¶Ë¿ÚÊä³ö¿ØÖÆ¼Ä´æÆ÷ GPIOB_OCTL ·½Ê½¿ØÖÆ LED */
-    Driver_GPIOB_OCTL &= ~(0x01 << 8);      // Êä³öµÍµçÆ½£¬LED Ï¨Ãğ
-    Driver_GPIOB_OCTL |=  (0x01 << 8);      // Êä³ö¸ßµçÆ½£¬LED µãÁÁ
+  /* ç«¯å£è¾“å‡ºæ§åˆ¶å¯„å­˜å™¨ GPIOB_OCTL æ–¹å¼æ§åˆ¶ LED */
+  UINIO_GPIOB_OCTL &= ~(0x01 << 8);      // è¾“å‡ºä½ç”µå¹³ï¼ŒLED ç†„ç­
+  UINIO_GPIOB_OCTL |=  (0x01 << 8);      // è¾“å‡ºé«˜ç”µå¹³ï¼ŒLED ç‚¹äº®
 
-    /* ¶Ë¿ÚÎ»²Ù×÷¼Ä´æÆ÷ GPIOB_BOP ·½Ê½¿ØÖÆ LED */
-    Driver_GPIOB_BOP |= (0x01 << (8 + 16)); // Êä³öµÍµçÆ½£¬LED Ï¨Ãğ
-    Driver_GPIOB_BOP |= (0x01 << 8);        // Êä³ö¸ßµçÆ½£¬LED µãÁÁ
+  /* ç«¯å£ä½æ“ä½œå¯„å­˜å™¨ GPIOB_BOP æ–¹å¼æ§åˆ¶ LED */
+  UINIO_GPIOB_BOP |= (0x01 << (8 + 16)); // è¾“å‡ºä½ç”µå¹³ï¼ŒLED ç†„ç­
+  UINIO_GPIOB_BOP |= (0x01 << 8);        // è¾“å‡ºé«˜ç”µå¹³ï¼ŒLED ç‚¹äº®
 
-    while(1) {}
+  while(1) {}
 }
