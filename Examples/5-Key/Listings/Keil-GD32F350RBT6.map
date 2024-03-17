@@ -24,10 +24,10 @@ Section Cross References
     led.o(i.UINIO_LED_GPIO_Config) refers to gd32f3x0_rcu.o(i.rcu_periph_clock_enable) for rcu_periph_clock_enable
     led.o(i.UINIO_LED_GPIO_Config) refers to gd32f3x0_gpio.o(i.gpio_mode_set) for gpio_mode_set
     led.o(i.UINIO_LED_GPIO_Config) refers to gd32f3x0_gpio.o(i.gpio_output_options_set) for gpio_output_options_set
-    systick.o(i.SysTick_Delay_MS) refers to systick.o(i.SysTick_Config) for SysTick_Config
-    systick.o(i.SysTick_Delay_MS) refers to system_gd32f3x0.o(.data) for SystemCoreClock
-    systick.o(i.SysTick_Delay_US) refers to systick.o(i.SysTick_Config) for SysTick_Config
-    systick.o(i.SysTick_Delay_US) refers to system_gd32f3x0.o(.data) for SystemCoreClock
+    systick.o(i.UINIO_SysTick_Delay_ms) refers to systick.o(i.SysTick_Config) for SysTick_Config
+    systick.o(i.UINIO_SysTick_Delay_ms) refers to system_gd32f3x0.o(.data) for SystemCoreClock
+    systick.o(i.UINIO_SysTick_Delay_us) refers to systick.o(i.SysTick_Config) for SysTick_Config
+    systick.o(i.UINIO_SysTick_Delay_us) refers to system_gd32f3x0.o(.data) for SystemCoreClock
     key.o(i.UINIO_Key_GPIO_Config) refers to gd32f3x0_rcu.o(i.rcu_periph_clock_enable) for rcu_periph_clock_enable
     key.o(i.UINIO_Key_GPIO_Config) refers to gd32f3x0_gpio.o(i.gpio_mode_set) for gpio_mode_set
     key.o(i.UINIO_Key_Scan) refers to gd32f3x0_gpio.o(i.gpio_input_bit_get) for gpio_input_bit_get
@@ -148,8 +148,8 @@ Removing Unused input sections from the image.
     Removing systick.o(.rev16_text), (4 bytes).
     Removing systick.o(.revsh_text), (4 bytes).
     Removing systick.o(i.SysTick_Config), (84 bytes).
-    Removing systick.o(i.SysTick_Delay_MS), (72 bytes).
-    Removing systick.o(i.SysTick_Delay_US), (72 bytes).
+    Removing systick.o(i.UINIO_SysTick_Delay_ms), (72 bytes).
+    Removing systick.o(i.UINIO_SysTick_Delay_us), (72 bytes).
     Removing key.o(.rev16_text), (4 bytes).
     Removing key.o(.revsh_text), (4 bytes).
     Removing gd32f3x0_adc.o(.rev16_text), (4 bytes).

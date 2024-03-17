@@ -9,8 +9,8 @@
 
 int main(void) {
   systick_config();         // 滴答定时器初始化
-  UINIO_LED_GPIO_Config();  // 配置 LED 相关的外设
-  UINIO_Key_GPIO_Config();  // 配置按键相关的外设
+  UINIO_LED_GPIO_Config();  // 配置 LED 相关的 GPIO 外设
+  UINIO_Key_GPIO_Config();  // 配置按键相关的 GPIO 外设
 
   while (1) {
     UINIO_Key_Scan();       // 循环扫描按键状态
