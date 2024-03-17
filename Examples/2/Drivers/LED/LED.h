@@ -3,7 +3,6 @@
 #define UINIO_LED_H
 
 #include "gd32f3x0.h"
-#include "systick.h"
 
 #define UINIO_LED_RCU  RCU_GPIOB   // 宏定义 LED 对应的 GPIO 端口时钟
 #define UINIO_LED_PORT GPIOB       // 宏定义 LED 对应的 GPIO 端口
