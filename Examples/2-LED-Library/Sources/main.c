@@ -1,19 +1,17 @@
 /*========== main.c ==========*/
 #include "gd32f3x0.h"
-#include "systick.h"
-#include <stdio.h>
+
 #include "main.h"
 #include "../Drivers/LED/LED.h"
 
 int main(void) {
-    systick_config();  // ³õÊ¼»¯ÏµÍ³µÎ´ğ¶¨Ê±Æ÷
-    LED_GPIO_Config(); // ³õÊ¼»¯ LED Ïà¹ØµÄ GPIO Òı½Å
+  UINIO_LED_GPIO_Config();  // åˆå§‹åŒ– LED ç›¸å…³çš„ GPIO å¼•è„š
 
-    gpio_bit_set(GPIOB, GPIO_PIN_8);             // GPIOB8 Êä³ö¸ßµçÆ½
-    gpio_bit_reset(GPIOB, GPIO_PIN_8);           // GPIOB8 Êä³öµÍµçÆ½
+  gpio_bit_set(UINIO_LED_PORT, UINIO_LED_PIN);             // GPIOB8 è¾“å‡ºé«˜ç”µå¹³
+  gpio_bit_reset(UINIO_LED_PORT, UINIO_LED_PIN);           // GPIOB8 è¾“å‡ºä½ç”µå¹³
 
-    gpio_bit_write(PORT_LED, PIN_LED, RESET);    // GPIOB8 Êä³öµÍµçÆ½
-    gpio_bit_write(PORT_LED, PIN_LED, SET);      // GPIOB8 Êä³ö¸ßµçÆ½
+  gpio_bit_write(UINIO_LED_PORT, UINIO_LED_PIN, RESET);    // GPIOB8 è¾“å‡ºä½ç”µå¹³
+  gpio_bit_write(UINIO_LED_PORT, UINIO_LED_PIN, SET);      // GPIOB8 è¾“å‡ºé«˜ç”µå¹³
 
-    while(1) {}
+  while(1) {}
 }
