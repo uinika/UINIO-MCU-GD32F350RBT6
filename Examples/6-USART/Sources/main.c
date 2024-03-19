@@ -23,8 +23,8 @@ int main(void) {
     UINIO_USART_Send_String("UinIO.com\n");                   // 发送字符串 UinIO.com
     
     /* 测试 printf() 串口打印重定向 */
-    count1++;                                                 // 整型变量自增 1
-    count2 += 1.0F;                                           // 浮点型变量自增 1
-    printf("count1 = %d, count2 = %.2f \n", count1, count2);  // 向串口打印输出日志
+    count1++;                                                 // 短整型测试变量自增 1
+    count2 += 1.0F;                                           // 浮点型测试变量自增 1
+    printf("count1 = %d, count2 = %.2f \n", count1, count2);  // 向 USART 串行接口打印格式化信息
   }
 }
