@@ -1,0 +1,37 @@
+/*========== TIMER_LED.c ==========*/
+#include "stdio.h"
+
+#include "../LED/LED.h"
+#include "../Timer-LED/Timer-LED.h"
+
+/** 基本定时器配置，参数 UINIO_Clock_Prescale 为时钟预分频值，参数 UINIO_Clock_Period 为时钟周期 */
+void UINIO_Basic_Timer_Config(uint16_t UINIO_Clock_Prescale, uint16_t UINIO_Clock_Period) {
+  rcu_periph_clock_enable(UINIO_TIMER_RCU); // 使能定时器外设时钟
+  /* CK_TIMERx = CK_AHB = 108MHz */
+  timer_deinit(UINIO_TIMER);                // 复位定时器外设
+
+  /* 配置定时器参数 */
+  timer_parameter_struct TimerParameter;                // 定义定时器参数结构体 timer_parameter_struct
+  TimerParameter.prescaler = UINIO_Clock_Prescale - 1;  // 预分频值，由于该值从 0 开始计数，所以这里需要减去 1
+  TimerParameter.alignedmode = TIMER_COUNTER_EDGE;      // 对齐模式，边缘对齐
+  TimerParameter.counterdirection = TIMER_COUNTER_UP;   // 计数方向，向上计数
+  TimerParameter.period = UINIO_Clock_Period - 1;       // 周期，同样由于该值从 0 开始计数，这里同样需要减去 1
+  TimerParameter.clockdivision = TIMER_CKDIV_DIV1;      // 时钟分频因子
+  TimerParameter.repetitioncounter = 0;                 // 重复计数器值，取值范围为 0 ~ 255，配置为 x 就会重复 x+1 次进入中断
+  timer_init(UINIO_TIMER, &TimerParameter);             // 初始化定时器
+
+  nvic_irq_enable(UINIO_TIMER_IRQ, 3U, 3U);             // 配置定时器中断优先级，抢占优先级 3，子优先级 2
+
+  timer_interrupt_enable(UINIO_TIMER, TIMER_INT_UP);  // 使能定时器更新中断
+  timer_enable(UINIO_TIMER);                          // 使能定时器
+}
+
+/** 基本定时器中断服务函数 */
+void UINIO_TIMER_IRQ_Handler(void) {
+  /* 判断定时器中断标志位 TIMER_INT_FLAG_UP 是否置位 */
+  if (timer_interrupt_flag_get(UINIO_TIMER, TIMER_INT_FLAG_UP) == SET) {
+    timer_interrupt_flag_clear(UINIO_TIMER, TIMER_INT_FLAG_UP);  // 清除定时器更新中断标志位
+    gpio_bit_toggle(UINIO_LED_Port, UINIO_LED_Pin);              // 翻转 LED 对应 GPIO 引脚的电平状态
+    printf("UinIO.com\n");                                       // 串口打印调试信息 UinIO.com
+  }
+}
