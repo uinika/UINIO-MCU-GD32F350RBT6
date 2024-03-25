@@ -14,18 +14,18 @@ static void UINIO_PWM_GPIO_Config(void) {
 void UINIO_PWM_Config(uint16_t UINIO_Clock_Prescale, uint16_t UINIO_Clock_Period) {
   UINIO_PWM_GPIO_Config();  // 调用 PWM 对应 GPIO 引脚的配置函数
 
-  rcu_periph_clock_enable(UINIO_PWM_TIMER_RCU);        // 使能定时器 TIMER1 外设时钟
-  timer_deinit(UINIO_PWM_TIMER);                       // 复位定时器 TIMER1
+  rcu_periph_clock_enable(UINIO_PWM_TIMER_RCU);  // 使能定时器 TIMER1 外设时钟
+  timer_deinit(UINIO_PWM_TIMER);                 // 复位定时器 TIMER1
 
   /* 配置 PWM 定时器参数 */
-  timer_parameter_struct TimerParameter;                // 定义 timer_parameter_struct 定时器参数结构体
-  TimerParameter.prescaler = UINIO_Clock_Prescale - 1;  // 预分频值，由于该值从 0 开始计数，所以这里需要减去 1
-  TimerParameter.alignedmode = TIMER_COUNTER_EDGE;      // 对齐模式，边缘对齐
-  TimerParameter.counterdirection = TIMER_COUNTER_UP;   // 计数方向，向上计数
-  TimerParameter.period = UINIO_Clock_Period - 1;       // 周期，同样由于该值从 0 开始计数，这里同样需要减去 1
-  TimerParameter.clockdivision = TIMER_CKDIV_DIV1;      // 时钟分频因子
-  TimerParameter.repetitioncounter = 0;                 // 重复计数器值，取值范围为 0 ~ 255，配置为 x 就会重复 x+1 次进入中断
-  timer_init(UINIO_PWM_TIMER, &TimerParameter);         // 初始化 PWM 相关的定时器
+  timer_parameter_struct TimerParameter;               // 定义 timer_parameter_struct 定时器参数结构体
+  TimerParameter.prescaler = UINIO_Clock_Prescale - 1; // 预分频值，由于该值从 0 开始计数，所以这里需要减去 1
+  TimerParameter.alignedmode = TIMER_COUNTER_EDGE;     // 对齐模式，边缘对齐
+  TimerParameter.counterdirection = TIMER_COUNTER_UP;  // 计数方向，向上计数
+  TimerParameter.period = UINIO_Clock_Period - 1;      // 周期，同样由于该值从 0 开始计数，这里同样需要减去 1
+  TimerParameter.clockdivision = TIMER_CKDIV_DIV1;     // 时钟分频因子
+  TimerParameter.repetitioncounter = 0;                // 重复计数器值，取值范围为 0 ~ 255，配置为 x 就会重复 x+1 次进入中断
+  timer_init(UINIO_PWM_TIMER, &TimerParameter);        // 初始化 PWM 相关的定时器
 
   /* 配置 PWM 输出通道 */
   timer_oc_parameter_struct TimerOutChannel;                                         // 输出通道配置结构体 timer_oc_parameter_struct
