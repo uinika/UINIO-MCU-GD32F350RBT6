@@ -17,7 +17,7 @@ void UINIO_PWM_Config(uint16_t UINIO_Clock_Prescale, uint16_t UINIO_Clock_Period
   rcu_periph_clock_enable(UINIO_PWM_TIMER_RCU);  // 使能定时器 TIMER1 外设时钟
   timer_deinit(UINIO_PWM_TIMER);                 // 复位定时器 TIMER1
 
-  /* 配置 PWM 定时器参数 */
+  /* 配置 PWM 定时器参数 TimerParameter */
   timer_parameter_struct TimerParameter;               // 定义 timer_parameter_struct 定时器参数结构体
   TimerParameter.prescaler = UINIO_Clock_Prescale - 1; // 预分频值，由于该值从 0 开始计数，所以这里需要减去 1
   TimerParameter.alignedmode = TIMER_COUNTER_EDGE;     // 对齐模式，边缘对齐
@@ -27,21 +27,19 @@ void UINIO_PWM_Config(uint16_t UINIO_Clock_Prescale, uint16_t UINIO_Clock_Period
   TimerParameter.repetitioncounter = 0;                // 重复计数器值，取值范围为 0 ~ 255，配置为 x 就会重复 x+1 次进入中断
   timer_init(UINIO_PWM_TIMER, &TimerParameter);        // 初始化 PWM 相关的定时器
 
-  /* 配置 PWM 输出通道 */
+  /* 配置 PWM 输出通道参数 TimerOutChannel */
   timer_oc_parameter_struct TimerOutChannel;                                         // 输出通道配置结构体 timer_oc_parameter_struct
-  TimerOutChannel.ocpolarity = TIMER_OC_POLARITY_HIGH;                               // 设置通道输出极性为高电平
+  TimerOutChannel.ocpolarity = TIMER_OC_POLARITY_HIGH;                               // 设置通道输出极性为高电平有效
   TimerOutChannel.outputstate = TIMER_CCX_ENABLE;                                    // 使能通道输出功能
   timer_channel_output_config(UINIO_PWM_TIMER, UINIO_PWM_CHANNEL, &TimerOutChannel); // 开始配置定时器通道的输出功能
 
   /* 配置占空比 */
   timer_channel_output_pulse_value_config(UINIO_PWM_TIMER, UINIO_PWM_CHANNEL, 0);                  // 配置定时器输出通道的脉冲值
-  timer_channel_output_mode_config(UINIO_PWM_TIMER, UINIO_PWM_CHANNEL, TIMER_OC_MODE_PWM0);        // 配置定时器输出通道的比较模式
-  timer_channel_output_shadow_config(UINIO_PWM_TIMER, UINIO_PWM_CHANNEL, TIMER_OC_SHADOW_DISABLE); // 配置定时器输出通道的影子寄存器
+  timer_channel_output_mode_config(UINIO_PWM_TIMER, UINIO_PWM_CHANNEL, TIMER_OC_MODE_PWM0);        // 配置定时器输出通道的比较模式为 PWM 模式 0
+  timer_channel_output_shadow_config(UINIO_PWM_TIMER, UINIO_PWM_CHANNEL, TIMER_OC_SHADOW_DISABLE); // 失能定时器输出通道的比较影子寄存器
 
-  /* 只有高级定时器使用 */
-  // timer_primary_output_config(TIMER0,ENABLE);
-  timer_auto_reload_shadow_enable(UINIO_PWM_TIMER); // 使能定时器自动重载影子
-  timer_enable(UINIO_PWM_TIMER);                    // 使能定时器
+  timer_auto_reload_shadow_enable(UINIO_PWM_TIMER); // 定时器自动重载影子使能
+  timer_enable(UINIO_PWM_TIMER);                    // 使能 PWM 相关的定时器
 }
 
 /** PWM 呼吸灯控制函数 */
