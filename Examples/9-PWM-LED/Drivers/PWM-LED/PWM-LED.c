@@ -1,4 +1,5 @@
 /*========== PWM_LED.h ==========*/
+#include "stdio.h"
 #include "systick.h"
 #include "../PWM-LED/PWM-LED.h"
 
@@ -12,9 +13,10 @@ static void UINIO_PWM_GPIO_Config(void) {
 
 /** 配置脉冲宽度调制 PWM 的工作参数，参数 UINIO_Clock_Prescale 为时钟预分频值，参数 UINIO_Clock_Period 为时钟周期 */
 void UINIO_PWM_Config(uint16_t UINIO_Clock_Prescale, uint16_t UINIO_Clock_Period) {
-  UINIO_PWM_GPIO_Config();  // 调用 PWM 对应 GPIO 引脚的配置函数
+  UINIO_PWM_GPIO_Config();  // 调用前面已经定义的 PWM 对应 GPIO 引脚的配置函数
 
   rcu_periph_clock_enable(UINIO_PWM_TIMER_RCU);  // 使能定时器 TIMER1 外设时钟
+  /* CK_TIMERx = CK_AHB = 108MHz */
   timer_deinit(UINIO_PWM_TIMER);                 // 复位定时器 TIMER1
 
   /* 配置 PWM 定时器参数 TimerParameter */
@@ -49,16 +51,22 @@ void UINIO_PWM_LED_Breathing(void) {
 
   /* 逐渐变亮 */
   if (Direct == 0) {
-    Value += 300; // 该值越大 LED 越亮
+    Value += 500; // 该值越大 LED 越亮
+    printf("Get brighter...\n");
+
     if (Value > 10000) {
       Direct = 1; // 切换至渐暗模式
+      printf("Switch to dark...\n");
     }
   }
   /* 逐渐变暗 */
   else {
-    Value -= 300; // 该值越小 LED 越暗
+    Value -= 500; // 该值越小 LED 越暗
+    printf("Get darker...\n");
+
     if (Value <= 0) {
       Direct = 0; // 切换至渐亮模式
+      printf("Switch to bright...\n");
     }
   }
 
