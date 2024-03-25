@@ -46,7 +46,7 @@ void UINIO_PWM_Config(uint16_t UINIO_Clock_Prescale, uint16_t UINIO_Clock_Period
 
 /** PWM 呼吸灯控制函数 */
 void UINIO_PWM_LED_Breathing(void) {
-  static uint8_t Direct = 0; // 方向
+  static uint8_t Direct = 0; // 亮暗调节方向
   static uint16_t Value = 0; // 脉冲值
 
   /* 逐渐变亮 */
