@@ -1,0 +1,15 @@
+/*========== DMA.h ==========*/
+#ifndef UINIO_DMA_H
+#define UINIO_DMA_H
+
+#include "gd32f3x0.h"
+#include "systick.h"
+
+#define ARRAYNUM(arr_nanme)      (uint32_t)(sizeof(arr_nanme) / sizeof(*(arr_nanme)))
+
+__IO FlagStatus UINIO_Transfer_Complete = RESET;  // 固件库中预定义的枚举类型变量，取值为 SET 或者 RESET    
+uint8_t UINIO_String[] = "UinIO.com : Copy current string from RAM to USART by DMA.\n"; // 需要通过 DMA 传输给 USART 的字符串
+                                  
+void UINIO_DMA_Config(void);
+
+#endif /* UINIO_DMA_H */

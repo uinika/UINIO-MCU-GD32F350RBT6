@@ -1,3 +1,4 @@
+/*========== main.c ==========*/
 #include "gd32f3x0.h"
 #include "../Drivers/USART/USART.h"
 
@@ -36,6 +37,4 @@ int main(void) {
 
   /* 等待传输完成 */
   while(RESET == UINIO_Transfer_Complete);
-
-  while(1);
 }
