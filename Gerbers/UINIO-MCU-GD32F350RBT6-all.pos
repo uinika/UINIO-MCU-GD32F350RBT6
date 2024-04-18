@@ -1,4 +1,4 @@
-### Footprint positions - created on Sat Apr 13 18:05:49 2024 ###
+### Footprint positions - created on Thu Apr 18 20:34:41 2024 ###
 ### Printed by KiCad version 7.0.11
 ## Unit = mm, Angle = deg.
 ## Side : All
@@ -16,22 +16,22 @@ C8        10pF              C_0603_1608Metric                      25.5500    -9
 C9        10pF              C_0603_1608Metric                      25.5500   -11.7164    0.0000  top
 C10       20pF              C_0603_1608Metric                      25.5500   -15.8764    0.0000  top
 C11       0.1uF             C_0603_1608Metric                      34.1150   -14.7064  180.0000  top
-D1        LED_Red           LED_0603_1608Metric                    18.9100   -16.9539  -90.0000  top
+D1        LED_Red           LED_0603_1608Metric                    18.9100   -17.3450  -90.0000  top
 HOLE1     Hole-1mm          Hole-1mm                               83.2350   -20.2564  180.0000  top
 HOLE2     Hole-1mm          Hole-1mm                               83.2250    -5.1464  180.0000  top
 HOLE3     Hole-1mm          Hole-1mm                               -1.0650   -20.2564  180.0000  top
 HOLE4     Hole-1mm          Hole-1mm                               -1.0650    -5.1464  180.0000  top
 J3        Conn_01x04_Pin    PinHeader_1x04_P2.54mm_Vertical        83.7850    -8.8864    0.0000  top
 L1        1KΩ_100Mhz       L_0603_1608Metric                      53.8450   -15.9364   90.0000  top
-R1        2K                R_0603_1608Metric                      16.1000   -17.7364  180.0000  top
+R1        2K                R_0603_1608Metric                      16.1000   -18.0950  180.0000  top
 R2        10K               R_0603_1608Metric                      55.7650    -9.5064   90.0000  top
 R3        10K               R_0603_1608Metric                      55.7850   -15.9364   90.0000  top
 R5        10K               R_0603_1608Metric                      68.9650    -9.5064  -90.0000  top
 R6        10K               R_0603_1608Metric                      68.9750   -15.9364  -90.0000  top
 R7        50R               R_0603_1608Metric                      16.1000   -13.3564  180.0000  top
 R8        50R               R_0603_1608Metric                      16.1000   -14.8164  180.0000  top
-R10       5.1K              R_0603_1608Metric                      16.1000   -11.8964    0.0000  top
-R11       5.1K              R_0603_1608Metric                      16.1000   -16.2764    0.0000  top
+R10       5.1K              R_0603_1608Metric                      16.1000   -11.4500    0.0000  top
+R11       5.1K              R_0603_1608Metric                      16.1000   -16.6350    0.0000  top
 SW1       BOOT0             KEY-SMD_4P-L4.2-W3.4-P2.15-LS4.7       62.1850    -9.2114    0.0000  top
 SW2       NRST              KEY-SMD_4P-L4.2-W3.4-P2.15-LS4.7       62.1850   -16.1814    0.0000  top
 U1        ME6211C33M5G-N    SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR      16.6750    -8.4014  180.0000  top
